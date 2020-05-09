@@ -1,0 +1,61 @@
+#Program starts here
+print("Welcome to the Marks Calculator\n")
+
+def calc_tutorial_mark(x):
+   N1=10
+   tut_marktut_percent=(tutorial_mark/N1)*10
+   return tut_marktut_percent
+def calc_assignment(y):
+   N2=100
+   assignment_percent=(assignment_mark/N2)*20
+   return  assignment_percent
+def calc_exam_mark(z):
+   N3=150
+   exam_percent=(exam_mark/N3)*70
+   return exam_percent
+lst1=[]
+lst2=[]
+
+#Condition. If a user types "y" or "Y", program execute, else,ends
+again="y"
+
+while again=="y" or again=="Y":
+#User enters the sudent id
+   student_id=input("Enter Student ID: " ">> ")
+
+      #User enters tutorial mark, which is then converted to out of 10          
+   tutorial_mark=float(input("Enter Assessable  Tutorial Mark (/10) "">> "))
+   mark1=calc_tutorial_mark(tutorial_mark)
+
+      #User enters the assignment mark, markeded out of 100
+   assignment_mark=float(input("Enter the Assignment mark (/100 "">> "))
+   mark2=calc_assignment(assignment_mark)
+
+      #User enter the Exam mark, marked out of 150
+
+   exam_mark=float(input("Enter Exam Mark (/150)"">> "))
+   mark3= calc_exam_mark(exam_mark)
+
+      #Final Mark is calculated
+   final_mark=mark1+mark2+mark3
+
+   print("Student ID: " +str(student_id)+ " Final Mark: "\
+    +str(format(final_mark,".0f"))+ "%")
+    
+    print("\n")
+      #User is asked if intended to continue with other students
+   again=str(input("Would you like to process another student's marks? y/n: "))
+   print("\n")
+   lst1.append(student_id)
+   lst2.append(final_mark)
+print("You have processed the following students: ")
+i=0
+print("Student ID" + "           " + "Final Mark (%)")
+while i< len(lst1):
+
+   print(str(lst1[i])+ "                         "+ str("%.0f" % lst2[i]))
+   i+=1
+
+print("Program has terminated, Goodbye")
+
+
